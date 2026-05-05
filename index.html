@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Copenhagen City Data — A Data Story</title>
+  <title>Does Size Matter? — Population, Growth &amp; Happiness</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -17,10 +17,10 @@
       </svg>
     </div>
     <div class="header-inner">
-      <div class="header-badge">⚓ Data Story</div>
-      <h1 class="site-title">City Stories<br /><em>in Numbers</em></h1>
+      <div class="header-badge">🌍 Data Story</div>
+      <h1 class="site-title">Does Size<br /><em>Matter?</em></h1>
       <p class="site-subtitle">
-        An exploratory journey through Copenhagen's open data — uncovering patterns, surprises, and stories hiding in the data.
+        An exploration of whether a country's population size — and how fast it has grown — can explain why some nations are so much happier than others.
       </p>
       <nav class="site-nav">
         <a href="#intro">Introduction</a>
@@ -38,24 +38,21 @@
     <section id="intro" class="section section--intro">
       <div class="section-inner">
         <div class="section-label">01 / Introduction</div>
-        <h2 class="section-title">What are we looking at?</h2>
+        <h2 class="section-title">Small countries, big smiles</h2>
         <p class="body-text">
-          Write your introduction here. Explain the central question you're investigating, why it matters, and what the reader will discover. Keep it short and compelling — this is what hooks your audience.
+          Look at any edition of the World Happiness Report and a pattern immediately jumps out: the countries at the very top — Finland, Denmark, Iceland, Norway, New Zealand — are all relatively small nations. Is this a coincidence, or does it reflect something fundamental about the relationship between a society's size and its well-being?
         </p>
         <p class="body-text">
-          You can describe your dataset here: where it comes from, its scale, its time range. Give the reader just enough context to follow the story.
+          This data story investigates that question. We combine the <strong>World Happiness Report</strong> (2015–2022) with <strong>World Bank population data</strong> (1980–2022) to track 162 countries across both dimensions. Happiness scores are averaged across the eight-year period to smooth out year-to-year noise. Population growth is measured as the percentage change from 1980 to 2022.
+        </p>
+        <p class="body-text">
+          The map below is your starting point. It immediately reveals the broad geography of happiness — a deep blue Northern Europe, a warm red Africa and South Asia. The question we want to answer: is the colour of a country partly determined by how many people live there?
         </p>
 
-        <!-- FIGURE PLACEHOLDER -->
-        <div class="figure-placeholder">
-          <div class="figure-placeholder__inner">
-            <span class="figure-placeholder__icon">🗺️</span>
-            <span class="figure-placeholder__label">Figure 1 — Overview map or summary chart</span>
-            <span class="figure-placeholder__hint">Replace this block with your visualization</span>
-          </div>
+        <div class="figure-embed">
+          <iframe src="plot1_choropleth.html" width="100%" height="580" frameborder="0" scrolling="no" title="Figure 1 — World happiness choropleth map"></iframe>
         </div>
-
-        <p class="caption">Figure 1: A brief caption describing what this visualization shows and what the reader should notice.</p>
+        <p class="caption">Figure 1: Average Happiness Score per country (2015–2022). Hover over any country to see its score, GDP per capita, social support, and region.</p>
       </div>
     </section>
 
@@ -63,51 +60,46 @@
     <section id="exploration" class="section section--exploration">
       <div class="rope-divider">
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
-        <span>⚓</span>
+        <span>📊</span>
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
       </div>
       <div class="section-inner">
         <div class="section-label">02 / Exploration</div>
-        <h2 class="section-title">Diving into the data</h2>
+        <h2 class="section-title">The happiest countries are strikingly small</h2>
         <p class="body-text">
-          Describe your exploratory analysis here. Walk the reader through what you found step by step — start with the big picture, then zoom in on interesting patterns.
+          Let's zoom in on the concrete countries. The chart below shows the top 10 happiest and bottom 10 least happy countries in our dataset. Hover over any bar to reveal the country's population — the contrast is striking.
+        </p>
+        <p class="body-text">
+          The top 10 is almost entirely composed of Western European nations plus Australia and New Zealand, all with populations well under 50 million. Finland (≈5.5M), Iceland (≈370K), and Denmark (≈5.9M) lead the pack. The bottom 10 is dominated by Sub-Saharan African countries — many with populations in the tens of millions and growing rapidly.
         </p>
 
-        <!-- TWO-COLUMN FIGURES -->
-        <div class="figure-grid figure-grid--2col">
-          <div>
-            <div class="figure-placeholder figure-placeholder--sm">
-              <div class="figure-placeholder__inner">
-                <span class="figure-placeholder__icon">📊</span>
-                <span class="figure-placeholder__label">Figure 2 — Distribution plot</span>
-              </div>
-            </div>
-            <p class="caption">Figure 2: Caption for left chart.</p>
-          </div>
-          <div>
-            <div class="figure-placeholder figure-placeholder--sm">
-              <div class="figure-placeholder__inner">
-                <span class="figure-placeholder__icon">📈</span>
-                <span class="figure-placeholder__label">Figure 3 — Time series</span>
-              </div>
-            </div>
-            <p class="caption">Figure 3: Caption for right chart.</p>
-          </div>
+        <div class="figure-embed">
+          <iframe src="plot2_top_bottom.html" width="100%" height="640" frameborder="0" scrolling="no" title="Figure 2 — Top and Bottom 10 countries by happiness score"></iframe>
         </div>
+        <p class="caption">Figure 2: Top 10 and Bottom 10 countries by average happiness score (2015–2022). Hover to see population size and GDP per capita.</p>
 
         <p class="body-text">
-          Continue narrating here. What patterns surprised you? What was expected? Use short paragraphs and guide the reader between figures.
+          The pattern is suggestive — but could it simply reflect <em>geography</em> rather than size? Western European countries are both small <em>and</em> wealthy. To separate these effects, we need to look at all 162 countries at once and ask: once you put every country on a chart of size versus happiness, does a downward trend emerge?
         </p>
 
-        <!-- WIDE INTERACTIVE FIGURE -->
-        <div class="figure-placeholder figure-placeholder--interactive">
-          <div class="figure-placeholder__inner">
-            <span class="figure-placeholder__icon">🔍</span>
-            <span class="figure-placeholder__label">Figure 4 — Interactive visualization</span>
-            <span class="figure-placeholder__hint">This is a good spot for a Bokeh, Altair, or Plotly interactive chart embedded via &lt;iframe&gt; or &lt;script&gt;</span>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-card__value">162</div>
+            <div class="stat-card__label">countries in the dataset</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">5.4</div>
+            <div class="stat-card__label">global mean happiness score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">2015–2022</div>
+            <div class="stat-card__label">happiness data coverage</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">1980–2022</div>
+            <div class="stat-card__label">population data coverage</div>
           </div>
         </div>
-        <p class="caption">Figure 4: An interactive chart where the reader can explore the data themselves.</p>
       </div>
     </section>
 
@@ -115,67 +107,73 @@
     <section id="insights" class="section section--insights">
       <div class="rope-divider">
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
-        <span>🌊</span>
+        <span>🔍</span>
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
       </div>
       <div class="section-inner">
         <div class="section-label">03 / Key Insights</div>
-        <h2 class="section-title">What did we find?</h2>
+        <h2 class="section-title">It's not just size — it's trajectory</h2>
 
         <!-- INSIGHT CARDS -->
         <div class="insight-cards">
-          <div class="insight-card insight-card--coral">
-            <div class="insight-card__number">01</div>
-            <h3>Finding one</h3>
-            <p>Write a short, punchy summary of your first key insight. One or two sentences max.</p>
-          </div>
           <div class="insight-card insight-card--blue">
+            <div class="insight-card__number">01</div>
+            <h3>Size has a weak negative link</h3>
+            <p>Larger populations tend to score slightly lower on happiness (r ≈ −0.24), but the relationship is modest and far from deterministic.</p>
+          </div>
+          <div class="insight-card insight-card--coral">
             <div class="insight-card__number">02</div>
-            <h3>Finding two</h3>
-            <p>Write a short, punchy summary of your second key insight. What surprised you most?</p>
+            <h3>Growth is a stronger signal</h3>
+            <p>Countries that have grown fastest since 1980 are on average less happy (r ≈ −0.40). Rapid demographic change seems to coincide with lower well-being.</p>
           </div>
           <div class="insight-card insight-card--yellow">
             <div class="insight-card__number">03</div>
-            <h3>Finding three</h3>
-            <p>Write a short, punchy summary of your third key insight. What's the takeaway?</p>
+            <h3>GDP &amp; social support dominate</h3>
+            <p>Once you control for GDP per capita, social support, and life expectancy (all r > 0.7), the population effect largely disappears. Size may be a symptom, not the cause.</p>
           </div>
         </div>
 
+        <h3 class="subsection-title">Happiness vs. population size</h3>
         <p class="body-text">
-          Elaborate on your findings here with full narrative text. Connect the insights back to the original question you set out to answer. What does this tell us about the city?
+          Each point in the chart below is one country. The x-axis uses a log scale because population ranges from 370,000 (Iceland) to 1.4 billion (China) — a linear axis would compress most countries into a tiny sliver on the left.
+        </p>
+        <p class="body-text">
+          The dashed regression line shows a modest downward slope: countries with larger populations tend to score slightly lower. But look at the spread — the USA (330M) scores above 7, while many small African nations score below 4. Colour by region makes it clear that a big part of the pattern is geographic: Sub-Saharan African countries are both large-growth nations and low-happiness nations, while Western European countries are both small and happy.
         </p>
 
-        <!-- MAIN INSIGHT FIGURE -->
-        <div class="figure-placeholder">
-          <div class="figure-placeholder__inner">
-            <span class="figure-placeholder__icon">💡</span>
-            <span class="figure-placeholder__label">Figure 5 — Main result visualization</span>
-            <span class="figure-placeholder__hint">Your most important chart goes here</span>
-          </div>
+        <div class="figure-embed">
+          <iframe src="plot3_scatter_size.html" width="100%" height="640" frameborder="0" scrolling="no" title="Figure 3 — Happiness vs. population size scatter"></iframe>
         </div>
-        <p class="caption">Figure 5: The headline visualization — this should be the clearest expression of your main finding.</p>
+        <p class="caption">Figure 3: Happiness score vs. population size (log scale). Each point is one country, coloured by region. The dashed line shows the OLS trend.</p>
 
-        <!-- TWO MORE FIGURES -->
-        <div class="figure-grid figure-grid--2col">
-          <div>
-            <div class="figure-placeholder figure-placeholder--sm">
-              <div class="figure-placeholder__inner">
-                <span class="figure-placeholder__icon">🔬</span>
-                <span class="figure-placeholder__label">Figure 6 — Supporting analysis</span>
-              </div>
-            </div>
-            <p class="caption">Figure 6: Supporting analysis or breakdown.</p>
-          </div>
-          <div>
-            <div class="figure-placeholder figure-placeholder--sm">
-              <div class="figure-placeholder__inner">
-                <span class="figure-placeholder__icon">🗂️</span>
-                <span class="figure-placeholder__label">Figure 7 — Additional view</span>
-              </div>
-            </div>
-            <p class="caption">Figure 7: An alternative perspective on the data.</p>
-          </div>
+        <h3 class="subsection-title">Happiness vs. population growth</h3>
+        <p class="body-text">
+          Now we shift the question: instead of asking how <em>big</em> a country is, we ask how <em>fast it has changed</em>. The chart below plots each country's percentage population growth from 1980 to 2022 against its average happiness score.
+        </p>
+        <p class="body-text">
+          The negative relationship is clearer here. Countries in Sub-Saharan Africa and the Middle East have seen 200–800% population growth and tend to score low on happiness. Eastern European countries cluster on the left with shrinking populations — a reflection of post-Soviet emigration — and score around the middle of the scale.
+        </p>
+        <p class="body-text">
+          Note: UAE, Qatar, and Saudi Arabia are excluded from this chart. Their extreme growth (800–900%) is driven almost entirely by labour migration rather than natural population growth, which would distort the regression line without adding meaningful insight.
+        </p>
+
+        <div class="figure-embed">
+          <iframe src="plot4_scatter_growth.html" width="100%" height="640" frameborder="0" scrolling="no" title="Figure 4 — Happiness vs. population growth scatter"></iframe>
         </div>
+        <p class="caption">Figure 4: Happiness score vs. population growth 1980–2022. UAE, Qatar and Saudi Arabia are excluded (growth driven by labour migration, not births).</p>
+
+        <h3 class="subsection-title">What actually drives happiness?</h3>
+        <p class="body-text">
+          Population size and growth tell part of the story — but a small part. The interactive chart below lets you explore all the features in the dataset. Try switching to <em>GDP per Capita</em>, <em>Social Support</em>, or <em>Healthy Life Expectancy</em>: the negative relationship disappears and a clear, tight positive relationship emerges instead (r > 0.7). These structural factors — not population — are the real engines of national well-being.
+        </p>
+        <p class="body-text">
+          This raises a deeper question: rapidly growing countries tend to have <em>both</em> low GDP and low social support. So is it population growth that makes people unhappy, or do poverty and weak institutions simply happen to coexist with rapid demographic change? The data cannot resolve causality — but it strongly suggests that improving living conditions is more likely to raise happiness than controlling population size.
+        </p>
+
+        <div class="figure-embed">
+          <iframe src="plot5_feature_explorer.html" width="100%" height="660" frameborder="0" scrolling="no" title="Figure 5 — Interactive feature explorer"></iframe>
+        </div>
+        <p class="caption">Figure 5: Use the dropdown to compare happiness against any feature in the dataset. GDP per capita, social support, and life expectancy are far stronger predictors of happiness than population size or growth.</p>
       </div>
     </section>
 
@@ -183,22 +181,25 @@
     <section id="conclusion" class="section section--conclusion">
       <div class="rope-divider">
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
-        <span>🐠</span>
+        <span>💡</span>
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
       </div>
       <div class="section-inner">
         <div class="section-label">04 / Conclusion</div>
         <h2 class="section-title">What does it all mean?</h2>
         <p class="body-text">
-          Wrap up your story here. Summarize the journey — what you set out to find, what you discovered, and what it means. Keep it accessible: imagine explaining it to a friend who hasn't seen any of the charts.
+          We started with a simple observation: the world's happiest countries are small. That observation holds up — there is a statistically significant negative relationship between population size and happiness, and an even stronger one between population growth and happiness. Countries that have expanded fastest since 1980 are, on average, markedly less happy than those that have remained stable or shrunk.
         </p>
         <p class="body-text">
-          You can also mention limitations or what you'd explore next if you had more time or data.
+          But the headline finding is what we <em>don't</em> find: population is not the main driver. Once you look at GDP per capita, social support, and healthy life expectancy, the population effect becomes much smaller. The countries that are both populous and unhappy are also the countries with weak institutions, low incomes, and poor health infrastructure. The countries that are both small and happy are also the countries with strong safety nets, high trust, and long lives.
+        </p>
+        <p class="body-text">
+          In other words: size may matter a little — but what your society offers its citizens matters a lot more.
         </p>
 
         <div class="conclusion-box">
-          <span class="conclusion-box__anchor">⚓</span>
-          <p><strong>In short:</strong> Replace this sentence with your one-sentence takeaway. This should be the "so what" — the thing a reader will remember after closing the tab.</p>
+          <span class="conclusion-box__anchor">💡</span>
+          <p><strong>In short:</strong> Small countries tend to be happier — but it is their wealth, social cohesion, and institutions that drive the difference, not their size alone. Population growth is a stronger signal than size, but both are dwarfed by the structural factors that separate thriving societies from struggling ones.</p>
         </div>
       </div>
     </section>
@@ -214,12 +215,12 @@
     </div>
     <div class="footer-inner">
       <h3>Want to go deeper?</h3>
-      <p>The full data analysis, code, and methodology live in our explainer notebook.</p>
-      <a href="#" class="notebook-link">📓 View Explainer Notebook on GitHub →</a>
+      <p>The full data analysis, methodology, and code live in our explainer notebook.</p>
+      <a href="https://github.com/fridapfrandsen/fridapfrandsen.github.io" class="notebook-link" target="_blank">📓 View Explainer Notebook on GitHub →</a>
       <div class="footer-meta">
-        <p>Made with 🌊 for the Social Data Analysis and Visualization course at DTU</p>
-        <p>Data source: <a href="https://portal.opendata.dk" target="_blank">portal.opendata.dk</a></p>
-        <p>Group members: Your Names Here</p>
+        <p>Made for the Social Data Analysis and Visualization course at DTU · Spring 2026</p>
+        <p>Data sources: <a href="https://worldhappiness.report" target="_blank">World Happiness Report</a> &amp; <a href="https://data.worldbank.org" target="_blank">World Bank Open Data</a></p>
+        <p>Group members: Karen Stentoft (s253843) &amp; Frida Pilegaard Frandsen (s253842)</p>
       </div>
     </div>
   </footer>
