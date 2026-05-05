@@ -1,10 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Data Viz Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copenhagen City Data — A Data Story</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
+
+  <!-- ░░ HEADER ░░ -->
+  <header class="site-header">
+    <div class="waves-top">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--sand)"/>
+      </svg>
+    </div>
+    <div class="header-inner">
+      <div class="header-badge">⚓ Data Story</div>
+      <h1 class="site-title">City Stories<br /><em>in Numbers</em></h1>
+      <p class="site-subtitle">
+        An exploratory journey through Copenhagen's open data — uncovering patterns, surprises, and stories hiding in the data.
+      </p>
+      <nav class="site-nav">
+        <a href="#intro">Introduction</a>
+        <a href="#exploration">Exploration</a>
+        <a href="#insights">Insights</a>
+        <a href="#conclusion">Conclusion</a>
+        <a href="#notebook" class="nav-highlight">📓 Explainer Notebook</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ SECTION 1 — INTRODUCTION ░░ -->
+    <section id="intro" class="section section--intro">
+      <div class="section-inner">
+        <div class="section-label">01 / Introduction</div>
+        <h2 class="section-title">What are we looking at?</h2>
+        <p class="body-text">
+          Write your introduction here. Explain the central question you're investigating, why it matters, and what the reader will discover. Keep it short and compelling — this is what hooks your audience.
+        </p>
+        <p class="body-text">
+          You can describe your dataset here: where it comes from, its scale, its time range. Give the reader just enough context to follow the story.
+        </p>
+
+        <!-- FIGURE PLACEHOLDER -->
+        <div class="figure-placeholder">
+          <div class="figure-placeholder__inner">
+            <span class="figure-placeholder__icon">🗺️</span>
+            <span class="figure-placeholder__label">Figure 1 — Overview map or summary chart</span>
+            <span class="figure-placeholder__hint">Replace this block with your visualization</span>
+          </div>
+        </div>
+
+        <p class="caption">Figure 1: A brief caption describing what this visualization shows and what the reader should notice.</p>
+      </div>
+    </section>
+
+    <!-- ░░ SECTION 2 — EXPLORATION ░░ -->
+    <section id="exploration" class="section section--exploration">
+      <div class="rope-divider">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+        <span>⚓</span>
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+      </div>
+      <div class="section-inner">
+        <div class="section-label">02 / Exploration</div>
+        <h2 class="section-title">Diving into the data</h2>
+        <p class="body-text">
+          Describe your exploratory analysis here. Walk the reader through what you found step by step — start with the big picture, then zoom in on interesting patterns.
+        </p>
+
+        <!-- TWO-COLUMN FIGURES -->
+        <div class="figure-grid figure-grid--2col">
+          <div>
+            <div class="figure-placeholder figure-placeholder--sm">
+              <div class="figure-placeholder__inner">
+                <span class="figure-placeholder__icon">📊</span>
+                <span class="figure-placeholder__label">Figure 2 — Distribution plot</span>
+              </div>
+            </div>
+            <p class="caption">Figure 2: Caption for left chart.</p>
+          </div>
+          <div>
+            <div class="figure-placeholder figure-placeholder--sm">
+              <div class="figure-placeholder__inner">
+                <span class="figure-placeholder__icon">📈</span>
+                <span class="figure-placeholder__label">Figure 3 — Time series</span>
+              </div>
+            </div>
+            <p class="caption">Figure 3: Caption for right chart.</p>
+          </div>
+        </div>
+
+        <p class="body-text">
+          Continue narrating here. What patterns surprised you? What was expected? Use short paragraphs and guide the reader between figures.
+        </p>
+
+        <!-- WIDE INTERACTIVE FIGURE -->
+        <div class="figure-placeholder figure-placeholder--interactive">
+          <div class="figure-placeholder__inner">
+            <span class="figure-placeholder__icon">🔍</span>
+            <span class="figure-placeholder__label">Figure 4 — Interactive visualization</span>
+            <span class="figure-placeholder__hint">This is a good spot for a Bokeh, Altair, or Plotly interactive chart embedded via &lt;iframe&gt; or &lt;script&gt;</span>
+          </div>
+        </div>
+        <p class="caption">Figure 4: An interactive chart where the reader can explore the data themselves.</p>
+      </div>
+    </section>
+
+    <!-- ░░ SECTION 3 — INSIGHTS ░░ -->
+    <section id="insights" class="section section--insights">
+      <div class="rope-divider">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+        <span>🌊</span>
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+      </div>
+      <div class="section-inner">
+        <div class="section-label">03 / Key Insights</div>
+        <h2 class="section-title">What did we find?</h2>
+
+        <!-- INSIGHT CARDS -->
+        <div class="insight-cards">
+          <div class="insight-card insight-card--coral">
+            <div class="insight-card__number">01</div>
+            <h3>Finding one</h3>
+            <p>Write a short, punchy summary of your first key insight. One or two sentences max.</p>
+          </div>
+          <div class="insight-card insight-card--blue">
+            <div class="insight-card__number">02</div>
+            <h3>Finding two</h3>
+            <p>Write a short, punchy summary of your second key insight. What surprised you most?</p>
+          </div>
+          <div class="insight-card insight-card--yellow">
+            <div class="insight-card__number">03</div>
+            <h3>Finding three</h3>
+            <p>Write a short, punchy summary of your third key insight. What's the takeaway?</p>
+          </div>
+        </div>
+
+        <p class="body-text">
+          Elaborate on your findings here with full narrative text. Connect the insights back to the original question you set out to answer. What does this tell us about the city?
+        </p>
+
+        <!-- MAIN INSIGHT FIGURE -->
+        <div class="figure-placeholder">
+          <div class="figure-placeholder__inner">
+            <span class="figure-placeholder__icon">💡</span>
+            <span class="figure-placeholder__label">Figure 5 — Main result visualization</span>
+            <span class="figure-placeholder__hint">Your most important chart goes here</span>
+          </div>
+        </div>
+        <p class="caption">Figure 5: The headline visualization — this should be the clearest expression of your main finding.</p>
+
+        <!-- TWO MORE FIGURES -->
+        <div class="figure-grid figure-grid--2col">
+          <div>
+            <div class="figure-placeholder figure-placeholder--sm">
+              <div class="figure-placeholder__inner">
+                <span class="figure-placeholder__icon">🔬</span>
+                <span class="figure-placeholder__label">Figure 6 — Supporting analysis</span>
+              </div>
+            </div>
+            <p class="caption">Figure 6: Supporting analysis or breakdown.</p>
+          </div>
+          <div>
+            <div class="figure-placeholder figure-placeholder--sm">
+              <div class="figure-placeholder__inner">
+                <span class="figure-placeholder__icon">🗂️</span>
+                <span class="figure-placeholder__label">Figure 7 — Additional view</span>
+              </div>
+            </div>
+            <p class="caption">Figure 7: An alternative perspective on the data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ SECTION 4 — CONCLUSION ░░ -->
+    <section id="conclusion" class="section section--conclusion">
+      <div class="rope-divider">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,2 100,10 Q150,18 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+        <span>🐠</span>
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,10 Q50,18 100,10 Q150,2 200,10" stroke="var(--rope)" stroke-width="3" fill="none" stroke-dasharray="6 4"/></svg>
+      </div>
+      <div class="section-inner">
+        <div class="section-label">04 / Conclusion</div>
+        <h2 class="section-title">What does it all mean?</h2>
+        <p class="body-text">
+          Wrap up your story here. Summarize the journey — what you set out to find, what you discovered, and what it means. Keep it accessible: imagine explaining it to a friend who hasn't seen any of the charts.
+        </p>
+        <p class="body-text">
+          You can also mention limitations or what you'd explore next if you had more time or data.
+        </p>
+
+        <div class="conclusion-box">
+          <span class="conclusion-box__anchor">⚓</span>
+          <p><strong>In short:</strong> Replace this sentence with your one-sentence takeaway. This should be the "so what" — the thing a reader will remember after closing the tab.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="site-footer" id="notebook">
+    <div class="waves-bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,0 L0,0 Z" fill="var(--sand)"/>
+      </svg>
+    </div>
+    <div class="footer-inner">
+      <h3>Want to go deeper?</h3>
+      <p>The full data analysis, code, and methodology live in our explainer notebook.</p>
+      <a href="#" class="notebook-link">📓 View Explainer Notebook on GitHub →</a>
+      <div class="footer-meta">
+        <p>Made with 🌊 for the Social Data Analysis and Visualization course at DTU</p>
+        <p>Data source: <a href="https://portal.opendata.dk" target="_blank">portal.opendata.dk</a></p>
+        <p>Group members: Your Names Here</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
