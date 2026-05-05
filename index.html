@@ -1,10 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Data Viz Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Does size matter? An interactive data story exploring the relationship between population size, growth, and national happiness. DTU Social Data Analysis 2026.">
+  <title>Does Size Matter? — Population & Happiness</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">DTU · Social Data 2026</div>
+      <div class="nav-dots">
+        <button class="nav-dot active" data-section="0" data-label="Home" id="nav-dot-0" aria-label="Go to Home section"></button>
+        <button class="nav-dot" data-section="1" data-label="Observation" id="nav-dot-1" aria-label="Go to Observation section"></button>
+        <button class="nav-dot" data-section="2" data-label="Growth" id="nav-dot-2" aria-label="Go to Growth section"></button>
+        <button class="nav-dot" data-section="3" data-label="Nuance" id="nav-dot-3" aria-label="Go to Nuance section"></button>
+        <button class="nav-dot" data-section="4" data-label="Conclusion" id="nav-dot-4" aria-label="Go to Conclusion section"></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       SECTION 1 — HERO
+       ============================================ -->
+  <section class="hero section" id="section-hero" data-section="0">
+    <div class="hero-bg">
+      <canvas class="particles-canvas" id="hero-particles"></canvas>
+    </div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Social Data Analysis & Visualization · Final Project</p>
+      <h1>
+        <span class="text-gradient">Does Size Matter?</span>
+      </h1>
+      <p class="hero-subtitle">
+        The happiest countries in the world are small. Is that a coincidence?
+        <br>A data-driven journey exploring the relationship between population size, growth, and national happiness.
+      </p>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 2 — THE OBSERVATION
+       ============================================ -->
+  <section class="section" id="section-observation" data-section="1">
+    <div class="container section-inner">
+      <div class="split-layout">
+        <div class="text-col reveal">
+          <div class="section-number">01 — The Observation</div>
+          <h2>Small Countries,<br><span class="text-gradient">Big Smiles</span></h2>
+          <p class="section-description">
+            When we look at the World Happiness Report, a striking pattern emerges:
+            the countries that consistently rank highest — Finland, Denmark, Iceland, Norway —
+            are all relatively small nations. Let's put this on a chart.
+          </p>
+          <div class="insight-card">
+            <div class="label">💡 Key Insight</div>
+            <p>There appears to be a negative correlation between population size and happiness score.
+               Smaller countries tend to cluster at the top of the happiness rankings.</p>
+          </div>
+        </div>
+        <div class="viz-col reveal reveal-delay-2">
+          <div class="viz-container" id="viz-1">
+            <!-- ========================================
+                 YOUR PLOT 1 GOES HERE
+                 Container is ~560px wide on desktop.
+                 Drop in an <svg>, <canvas>, <iframe>,
+                 or build a D3 chart right here.
+                 ======================================== -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 3 — THE EXPLORATION
+       ============================================ -->
+  <section class="section" id="section-exploration" data-section="2">
+    <div class="container section-inner">
+      <div class="split-layout">
+        <div class="text-col reveal">
+          <div class="section-number">02 — The Exploration</div>
+          <h2>How Has<br><span class="text-gradient">Population Growth</span><br>Shaped Happiness?</h2>
+          <p class="section-description">
+            Population doesn't just sit still — it grows, sometimes rapidly.
+            Countries with rapid population growth face different challenges: 
+            more pressure on infrastructure, education, healthcare, and governance.
+          </p>
+          <p class="section-description">
+            Here we compare the population trajectories of some of the happiest
+            and least happy nations over the past 60 years.
+          </p>
+          <div class="insight-card">
+            <div class="label">💡 Key Insight</div>
+            <p>The happiest countries tend to have slow, stable population growth,
+               while many of the least happy countries have seen rapid population increases.</p>
+          </div>
+        </div>
+        <div class="viz-col reveal reveal-delay-2">
+          <div class="viz-container" id="viz-2">
+            <!-- ========================================
+                 YOUR PLOT 2 GOES HERE
+                 ======================================== -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 4 — THE NUANCE
+       ============================================ -->
+  <section class="section" id="section-nuance" data-section="3">
+    <div class="container section-inner">
+      <div class="split-layout">
+        <div class="text-col reveal">
+          <div class="section-number">03 — The Nuance</div>
+          <h2>It's Not<br><span class="text-gradient">Just About Size</span></h2>
+          <p class="section-description">
+            Population size alone doesn't determine happiness. 
+            Factors like GDP per capita, social support, and personal freedom 
+            play crucial roles — and these tend to be stronger in smaller nations.
+          </p>
+          <p class="section-description">
+            Explore how different factors correlate with happiness across regions.
+            Select an axis variable and hover to discover each country's story.
+          </p>
+          <div class="insight-card">
+            <div class="label">💡 Key Insight</div>
+            <p>GDP per capita and social support show much stronger correlations with happiness
+               than population size — suggesting that <em>how</em> a country is governed matters more than how many people live there.</p>
+          </div>
+        </div>
+        <div class="viz-col reveal reveal-delay-2">
+          <div class="viz-container" id="viz-3">
+            <!-- ========================================
+                 YOUR PLOT 3 GOES HERE
+                 ======================================== -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 5 — CONCLUSION
+       ============================================ -->
+  <section class="section" id="section-conclusion" data-section="4">
+    <div class="container section-inner" style="text-align: center;">
+      <div class="reveal">
+        <div class="section-number" style="justify-content: center;">04 — Conclusion</div>
+        <h2>What Really Makes<br><span class="text-gradient">A Nation Happy?</span></h2>
+        <p class="section-description" style="margin: var(--space-lg) auto var(--space-2xl);">
+          Our journey through the data reveals that while smaller countries do tend to be happier,
+          <strong style="color: var(--text-primary);">size itself is not the cause</strong>.
+          Rather, smaller nations often share traits — strong social safety nets, higher GDP per capita,
+          greater personal freedom — that are the true drivers of well-being.
+        </p>
+      </div>
+
+      <div class="conclusion-grid">
+        <div class="conclusion-card reveal reveal-delay-1">
+          <div class="conclusion-icon">🏘️</div>
+          <h3>Small ≠ Happy</h3>
+          <p>Population size correlates with happiness, but doesn't cause it.
+             Many small countries also score poorly.</p>
+        </div>
+        <div class="conclusion-card reveal reveal-delay-2">
+          <div class="conclusion-icon">📈</div>
+          <h3>Growth Matters</h3>
+          <p>Rapid population growth strains resources and governance,
+             making it harder to maintain quality of life.</p>
+        </div>
+        <div class="conclusion-card reveal reveal-delay-3">
+          <div class="conclusion-icon">🏛️</div>
+          <h3>Governance Wins</h3>
+          <p>GDP, social support, freedom, and low corruption —
+             these are the real predictors of national happiness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Social Data Analysis & Visualization — DTU, Spring 2026<br>
+        Karen Stentoft (s253843) · Frida Pilegaard Frandsen (s253842)<br>
+        <a href="https://github.com/fridapfrandsen/fridapfrandsen.github.io" target="_blank" rel="noopener">GitHub Repository</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <!-- Add your own visualization script here:
+  <script src="js/visualizations.js"></script>
+  -->
 </body>
 </html>
