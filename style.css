@@ -183,7 +183,7 @@ figcaption {
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .site-footer {
   background: var(--text);
-  color: rgba(255,255,255,0.7);
+  color: var(--accent);
   padding: 64px 24px 48px;
   text-align: center;
 }
@@ -197,7 +197,10 @@ figcaption {
 .footer-inner > p {
   font-size: 0.98rem;
   margin-bottom: 28px;
-  opacity: 0.7;
+  margin: 0 auto 28px;
+  /* opacity: 0.7; */
+  color: var(--accent);
+  text-align: center;
 }
 .notebook-btn {
   display: inline-block;
@@ -225,6 +228,9 @@ figcaption {
 }
 .footer-meta a { color: var(--accent); text-decoration: none; }
 .footer-meta a:hover { color: var(--highlight); }
+.footer-meta p {
+  color: var(--accent);
+}
 
 /* ── SCROLLBAR ───────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }

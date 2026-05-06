@@ -15,7 +15,7 @@
       <span class="eyebrow">Social Data Analysis &amp; Visualization · DTU · Spring 2026</span>
       <h1 class="site-title">Does Size Matter?</h1>
       <p class="site-subtitle">
-        Exploring whether a country's population size — and how fast it has grown — can explain why some nations are so much happier than others.
+        Exploring whether a country's population size and how fast it has grown can explain why some nations are so much happier than others.
       </p>
       <nav class="site-nav">
         <a href="#map">The map</a>
@@ -38,17 +38,17 @@
           Look at any edition of the World Happiness Report and a pattern immediately jumps out: the countries at the top — Finland, Denmark, Iceland, Norway, New Zealand — are all relatively small nations. Is this a coincidence, or does it reflect something fundamental about the relationship between a society's size and its well-being?
         </p>
         <p>
-          This data story combines the <strong>World Happiness Report</strong> (2015–2022) with <strong>World Bank population data</strong> (1980–2022) to examine 162 countries across both dimensions. Happiness scores are averaged across eight years to smooth out year-to-year noise; population growth is measured as the percentage change since 1980.
+          This article combines the <strong>World Happiness Report</strong> (2015–2022) with <strong>World Bank population data</strong> (1980–2022) to examine 162 countries across both dimensions. Happiness scores are averaged across eight years to smooth out year-to-year noise; population growth is measured as the percentage change since 1980.
         </p>
         <p>
-          Start with the map. Notice the deep blue across Northern Europe and the warm red across Sub-Saharan Africa and South Asia. The question we want to answer: is the colour of a country partly determined by how many people live there?
+          We start by looking at a map of the world. The countries are colored according to their averaged happiness score. It's noticeably that the happiness diverges across regions. The question we want to answer: is the colour of a country partly determined by how many people live there?
         </p>
 
         <figure class="fig">
           <iframe src="plot1_choropleth.html" width="100%" height="580" frameborder="0" scrolling="no"
                   title="Figure 1 — World happiness choropleth map"></iframe>
           <figcaption>
-            Figure 1 — Average happiness score per country (2015–2022). Hover over any country to see its score, GDP per capita, social support, and region.
+            Figure 1 — Average happiness score per country (2015–2022). Hover over any country to see its score and region. Zoom and pull the map to discover different countries.
           </figcaption>
         </figure>
       </div>
@@ -59,17 +59,20 @@
       <div class="section-inner">
         <h2>The happiest countries are strikingly small</h2>
         <p>
-          The top 10 is almost entirely composed of Western European nations plus Australia and New Zealand — all with populations well under 50 million. Finland (≈5.5M), Iceland (≈370K), and Denmark (≈5.9M) lead the pack. The bottom 10 is dominated by Sub-Saharan African countries, many with populations in the tens of millions and growing rapidly.
+          Let's look at the happiest and the least happiest countries in the world.
+          The top 10 is almost entirely composed of Western European nations plus Australia and New Zealand — all with populations well under 50 million and top 5 having less than 10 million citizens. 
+          Finland (≈5.5M), Iceland (≈370K), and Denmark (≈5.9M) takes the lead.
+          The bottom 10 is dominated by Sub-Saharan African countries. Here the population varies more and there isn't a striking differnce in the population compared to the top countries.
         </p>
         <p>
-          Hover over any bar to see the country's population and GDP per capita. The contrast in size is striking — though it immediately raises the question of whether geography and wealth, not size alone, are driving the difference.
+          Hover over any bar to see the country's population and GDP per capita. The size of the happy contries are striking — though it immediately raises the question of whether geography and wealth, not size alone, are driving the difference.
         </p>
 
         <figure class="fig">
           <iframe src="plot2_top_bottom.html" width="100%" height="640" frameborder="0" scrolling="no"
                   title="Figure 2 — Top and bottom 10 countries by happiness score"></iframe>
           <figcaption>
-            Figure 2 — Top 10 and bottom 10 countries by average happiness score (2015–2022). Hover to see population size and GDP per capita.
+            Figure 2 — Top 10 and bottom 10 countries by average happiness score (2015–2022). Hover to see population size.
           </figcaption>
         </figure>
       </div>
@@ -78,12 +81,12 @@
     <!-- SECTION 3 -->
     <section id="size" class="section">
       <div class="section-inner">
-        <h2>A modest, but real, size effect</h2>
+        <h2>So does size matter?</h2>
         <p>
-          Put all 162 countries on a single chart and a downward trend emerges: countries with larger populations tend to score slightly lower on happiness. The x-axis uses a log scale because population ranges from 370,000 (Iceland) to 1.4 billion (China) — a linear axis would compress most countries into a sliver on the left.
+          Put all 162 countries on a single chart and a downward trend emerges: countries with larger populations tend to score slightly lower on happiness. The x-axis uses a log scale because population ranges from 370,000 (Iceland) to 1.4 billion (China). So a linear axis would compress most countries to the left making it difficult to examine.
         </p>
         <p>
-          But look at the spread. The USA (330M) scores above 7; many small African nations score below 4. Colouring by region reveals that a large part of the pattern is geographic — Sub-Saharan African countries are both large-growth nations and low-happiness nations, while Western European countries are both small and happy. Is it size that matters, or something that happens to correlate with size?
+          But look at the spread. Some countries aren't consistent with our hypoteses. USA (330 million citizens) scores above 7, while many small African nations score below 4. So maybe size isn't the explenation to the happiness of a country.
         </p>
 
         <figure class="fig">
@@ -93,28 +96,34 @@
             Figure 3 — Happiness score vs. population size (log scale). Each point is one country, coloured by region. The dashed line shows the OLS trend.
           </figcaption>
         </figure>
+
+        <p>
+            The unconvencing correlation raises the question: So does size really matters? Or is it just a coincidence that the happiest countries are small?
+        </p>
       </div>
     </section>
 
     <!-- SECTION 4 -->
     <section id="growth" class="section section--alt">
       <div class="section-inner">
-        <h2>It is not just size — it is trajectory</h2>
+        <h2>It is not just the size — it is the development in size</h2>
         <p>
-          Instead of asking how <em>big</em> a country is, what if we ask how <em>fast it has changed</em>? The chart below plots each country's percentage population growth from 1980 to 2022 against its average happiness score. The negative relationship is noticeably clearer.
+          Instead of asking how <em>big</em> a country is, what if we ask how <em>much has it grown</em>? The chart below plots each country's population growth from 1980 to 2022 against its average happiness score. The negative relationship is noticeably clearer.
         </p>
         <p>
-          Countries in Sub-Saharan Africa and the Middle East have seen 200–800% population growth and tend to score low on happiness. Eastern European countries cluster on the left with shrinking populations — a reflection of post-Soviet emigration — and score around the middle of the scale.
+          Countries in Sub-Saharan Africa and the Middle East have seen 200–800% population growth and tend to score low on happiness. 
+          Eastern European countries cluster on the left with shrinking populations, reflecting the post-Soviet emigration, and score around the middle of the scale.
+          Western European countries also cluster towards the left with a pretty stabil population since 1980, and also scores high in happiness.
         </p>
         <p class="note">
-          Note: UAE, Qatar, and Saudi Arabia are excluded from this chart. Their extreme growth (800–900%) is driven almost entirely by labour migration rather than natural population growth, which would distort the trend line without adding meaningful insight.
+          Note: United Arab Emirates and Qatar are excluded from this chart. Their extreme growth (800–900%) is driven almost entirely by labour migration rather than natural population growth, which would distort the trend line without adding meaningful insight.
         </p>
 
         <figure class="fig">
           <iframe src="plot4_scatter_growth.html" width="100%" height="640" frameborder="0" scrolling="no"
                   title="Figure 4 — Happiness vs. population growth scatter"></iframe>
           <figcaption>
-            Figure 4 — Happiness score vs. population growth 1980–2022. UAE, Qatar, and Saudi Arabia are excluded (growth driven by labour migration, not births).
+            Figure 4 — Happiness score vs. population growth 1980–2022. UAE and Qatar are excluded.
           </figcaption>
         </figure>
       </div>
@@ -123,9 +132,12 @@
     <!-- SECTION 5 — FEATURE EXPLORER -->
     <section id="explore" class="section section--explore">
       <div class="section-inner">
-        <h2>What actually drives happiness?</h2>
+        <h2>So what does actually drives happiness?</h2>
         <p>
-          Population size and growth tell part of the story — but a small part. Use the dropdown below to explore all features in the dataset. Switch to <em>GDP per Capita</em>, <em>Social Support</em>, or <em>Healthy Life Expectancy</em> and watch: the weak negative relationship disappears and a clear, tight positive relationship emerges.
+          Population size and growth tell part of the story — but a small part.
+        </p>
+        <p>
+            You can now explore the data on your own. Use the dropdown menu in the plot below to explore which features impact the happiness of a country. Switch between <em>GDP per Capita</em>, <em>Social Support</em>, <em>Healthy Life Expectancy</em>, <em>Freedom to make life decision</em>, <em>Perception of corruption</em> and <em>Generosity</em> and notice the correlations between the different factors and the happiness level.
         </p>
         <p>
           This raises a deeper question. Rapidly growing countries tend to have both low GDP and low social support. So is it population growth that makes people unhappy — or do poverty and weak institutions simply happen to coexist with rapid demographic change? The data cannot resolve causality, but it strongly suggests that improving living conditions is more likely to raise happiness than controlling population size.
@@ -146,15 +158,32 @@
       <div class="section-inner">
         <h2>What does it all mean?</h2>
         <p>
-          We started with a simple observation: the world's happiest countries are small. That observation holds up — there is a statistically significant negative relationship between population size and happiness, and an even stronger one between population growth and happiness.
+            We started with a simple observation: the world's happiest countries tend to be small. 
+            Finland, Denmark, Iceland, Norway — the usual suspects at the top of the happiness rankings all have populations well below 10 million. 
+            That pattern is real and statistically significant. But as with most things in social science, the story behind the pattern is more interesting than the pattern itself.
         </p>
         <p>
-          But the headline finding is what we <em>don't</em> find. Once you look at GDP per capita, social support, and healthy life expectancy, the population effect shrinks considerably. The countries that are both populous and unhappy are also the countries with weak institutions, low incomes, and poor health infrastructure. The countries that are both small and happy are also the countries with strong safety nets, high trust, and long lives.
+            Our scatter plots confirm a negative relationship between population size and happiness 
+            and a somewhat stronger one between population growth since 1980 and happiness. 
+            But correlation is of course not directly causation. And the direction of causality is ambigious in this instance.
+        </p>
+        <p>
+            It's hard to tell whether the growth in population causes the lower happiness or if the lower happiness causes the growth.
+        </p>
+        <p>
+            All in all our findings show that
+            population size and growth are associated with lower happiness — but they are not the primary drivers. 
+            The deeper story is one of institutions, redistribution, and social infrastructure. 
+            Countries that manage to build strong public systems tend to be happier, and they tend to be smaller. 
+            Size may make some things easier, but it is far from destiny.
         </p>
 
         <div class="conclusion-box">
           <p>
-            Small countries tend to be happier — but it is their wealth, social cohesion, and institutions that drive the difference, not their size alone. Population growth is a stronger signal than size, but both are dwarfed by the structural factors that separate thriving societies from struggling ones.
+            Small countries tend to be happier — but it is a number of factors that drive the difference, 
+            not their size alone. 
+            Population growth is a stronger signal than size, but both are not as strong by the structural 
+            factors that separate thriving societies from struggling ones.
           </p>
           <p class="conclusion-box__coda">
             In other words: <strong>size may matter a little — but what your society offers its citizens matters a lot more.</strong>
